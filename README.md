@@ -15,7 +15,7 @@ Install-Package Append.Blazor.Notifications
 ```
 
 ## Demo
-There is a sample application in /docs folder which is also hosted as [documentation](https://blazornotifications.append.be). 
+There is a sample application in /docs folder which is also hosted as [documentation](https://blazor-notifications.append.be). 
 > For some other references of what the API does see the example [demo](https://web-push-book.gauntface.com/demos/notification-examples/)
 
 ## Usage
@@ -61,7 +61,7 @@ await NotificationService.CreateAsync(title, options);
 ```
  ### Browser Support
 ```csharp
-bool IsSupportedByBrowser = NotificationService.IsSupportedByBrowserAsync(); 
+bool IsSupportedByBrowser = await NotificationService.IsSupportedByBrowserAsync()
 ```
 ### Request Permission
 ```csharp
