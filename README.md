@@ -5,6 +5,9 @@ Implementation of the [Notification API](https://developer.mozilla.org/en-US/doc
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Append.Blazor.Notifications.svg)](https://www.nuget.org/packages/Append.Blazor.Notifications)
 [![License](https://img.shields.io/github/license/Append-IT/Blazor.Notifications.svg)](https://github.com/Append-IT/Blazor.Notifications/blob/main/LICENSE)
 
+## Preview
+![](docs/wwwroot/images/intro.gif)
+
 ## Installation
 
 ```
