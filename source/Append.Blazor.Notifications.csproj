@@ -12,6 +12,7 @@
     <RepositoryUrl>https://github.com/Append-IT/Blazor.Notifications</RepositoryUrl>
     <PackageTags>Blazor;Notifications;.NET;Razor;HTML</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   
