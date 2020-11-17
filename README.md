@@ -58,7 +58,7 @@ await NotificationService.CreateAsync(title, options);
 ```
  ### Browser Support
 ```csharp
-bool IsSupportedByBrowser = NotificationService.IsSupportedByBrowserAsync(); 
+bool IsSupportedByBrowser = await NotificationService.IsSupportedByBrowserAsync()
 ```
 ### Request Permission
 ```csharp
