@@ -1,15 +1,15 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Append.Blazor.Notifications.Documentation", "docs\Append.Blazor.Notifications.Documentation.csproj", "{84CCFE87-E62B-4E99-AA46-31D5DBE216CD}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Append.Blazor.Notifications", "source\Append.Blazor.Notifications.csproj", "{BBA4A359-73FC-482B-AB5D-590D2C8FDB08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{AC8E6EC7-BD14-4E6E-81AC-D1FEA0CAAA84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B712B041-C86F-431D-8AD5-83A57ABDA6D2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Append.Blazor.Notifications.Documentation", "docs\Append.Blazor.Notifications.Documentation.csproj", "{84CCFE87-E62B-4E99-AA46-31D5DBE216CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
