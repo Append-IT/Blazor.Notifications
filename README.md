@@ -55,7 +55,7 @@ PermissionType permission = await NotificationService.RequestPermissionAsync();
 
 ### Check Notification Permission Status
 ```csharp
-PermissionType permission = await NotificationService.PermissionStatus;
+PermissionType permission = NotificationService.PermissionStatus;
 ```
 
 ### Create a notification
