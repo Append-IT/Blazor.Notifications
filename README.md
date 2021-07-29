@@ -43,6 +43,21 @@ or
 [Inject] private INotificationService _notificationService { get; set; }
 ```
 
+ ### Browser Support
+```csharp
+bool IsSupportedByBrowser = await NotificationService.IsSupportedByBrowserAsync()
+```
+
+### Request Permission
+```csharp
+PermissionType permission = await NotificationService.RequestPermissionAsync();
+```
+
+### Check Notification Permission Status
+```csharp
+PermissionType permission = await NotificationService.PermissionStatus;
+```
+
 ### Create a notification
 #### Using a Function (basic)
 ```csharp
@@ -59,14 +74,7 @@ NotificationOptions options = new NotificationOptions
 
 await NotificationService.CreateAsync(title, options);
 ```
- ### Browser Support
-```csharp
-bool IsSupportedByBrowser = await NotificationService.IsSupportedByBrowserAsync()
-```
-### Request Permission
-```csharp
-PermissionType permission = await NotificationService.RequestPermissionAsync();
-```
+
 
 # Contributions and feedback
 
