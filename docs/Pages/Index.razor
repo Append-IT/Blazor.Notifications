@@ -14,8 +14,8 @@
     <div class="col-md">
         <div class="form-group">
             <label>User has permission?</label>
-            <div class="alert @(permission == PermissionType.Granted ? "alert-success" : permission == PermissionType.Default ? "alert-secondary" :"alert-warning")" role="alert">
-                The user's permission is: @permission.ToString()
+            <div class="alert @(NotificationService.PermissionStatus == PermissionType.Granted ? "alert-success" : NotificationService.PermissionStatus == PermissionType.Default ? "alert-secondary" :"alert-warning")" role="alert">
+                The user's permission is: @NotificationService.PermissionStatus.ToString()
             </div>
         </div>
     </div>
@@ -49,7 +49,6 @@
 
 
 @functions{
-    private PermissionType permission;
     private bool isSupportedByBrowser;
     private string title = "My Dummy Title";
     private string body = "Lorem ipsum dolor sit ...";
@@ -73,6 +72,6 @@
     }
     private async Task RequestPermission()
     {
-        permission = await NotificationService.RequestPermissionAsync();
+        await NotificationService.RequestPermissionAsync();
     }
 }

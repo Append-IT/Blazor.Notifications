@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/Append-IT/Blazor.Notifications</RepositoryUrl>
     <PackageTags>Blazor;Notifications;.NET;Razor;HTML</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.8" />
   </ItemGroup>
 
   <ItemGroup>
