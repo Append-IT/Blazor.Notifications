@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.JSInterop;
+using System.Threading.Tasks;
 
 namespace Append.Blazor.Notifications
 {
@@ -26,15 +27,15 @@ namespace Append.Blazor.Notifications
         /// </summary>
         /// <param name="title"></param>
         /// <param name="options"></param>
-        /// <returns></returns>
-        ValueTask CreateAsync(string title, NotificationOptions options);
+        /// <returns>The created <see cref="Notification"/>.</returns>
+        ValueTask<Notification> CreateAsync(string title, NotificationOptions options);
         /// <summary>
         /// Creates a Notifcation with the supplied parameters.
         /// </summary>
         /// <param name="title">The title of the notification.</param>
         /// <param name="description">The body or description of the notification.</param>
         /// <param name="iconUrl">Link to a image, can be remote or served from the filesystem.</param>
-        /// <returns></returns>
-        ValueTask CreateAsync(string title, string description, string iconUrl = null);
+        /// <returns>The created <see cref="Notification"/>.</returns>
+        ValueTask<Notification> CreateAsync(string title, string description, string iconUrl = null);
     }
 }

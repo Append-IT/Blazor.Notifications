@@ -37,14 +37,15 @@ namespace Append.Blazor.Notifications
         }
 
         /// <inheritdoc/>
-        public async ValueTask CreateAsync(string title, NotificationOptions options)
+        public async ValueTask<Notification> CreateAsync(string title, NotificationOptions options)
         {
             var module = await _moduleTask.Value;
-            await module.InvokeVoidAsync("create", title, options);
+            var jsObject = await module.InvokeAsync<IJSObjectReference>("create", title, options);
+            return new Notification(title, jsObject, options);
         }
 
         /// <inheritdoc/>
-        public async ValueTask CreateAsync(string title, string body, string icon = null)
+        public async ValueTask<Notification> CreateAsync(string title, string body, string icon = null)
         {
             var module = await _moduleTask.Value;
 
@@ -54,7 +55,8 @@ namespace Append.Blazor.Notifications
                 Icon = icon,
             };
 
-            await module.InvokeVoidAsync("create", title, options);
+            var jsObject = await module.InvokeAsync<IJSObjectReference>("create", title, options);
+            return new Notification(title, jsObject, options);
         }
 
         public async ValueTask DisposeAsync()
