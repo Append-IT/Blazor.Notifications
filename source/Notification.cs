@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Microsoft.JSInterop;
+using System;
+using System.Threading.Tasks;
 
 namespace Append.Blazor.Notifications
 {
     /// <summary>
     /// A notification is an abstract representation of something that happened, such as the delivery of a message.
     /// </summary>
-    public class Notification
+    public class Notification : IAsyncDisposable
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         /// <summary>
         /// Defines a title for the notification, which will be shown at the top of the notification window when it is fired.
         /// </summary>
-        public Guid Id { get; set; } = Guid.NewGuid();
         public string Title { get; private set; }
 
         /// <summary>
@@ -75,10 +78,14 @@ namespace Append.Blazor.Notifications
         /// </summary>
         public int TimeOut { get; private set; } = 5;
 
-        public Notification(string title, NotificationOptions options = null)
+        private readonly IJSObjectReference _jsObject;
+
+        internal Notification(string title, IJSObjectReference jsObject, NotificationOptions options = null)
         {
             if (string.IsNullOrWhiteSpace(title))
                 throw new ArgumentNullException($"{nameof(title)}, cannot be null or empty.");
+            if (jsObject is null)
+                throw new ArgumentNullException(nameof(jsObject));
 
             Title = title;
 
@@ -101,6 +108,22 @@ namespace Append.Blazor.Notifications
             NoScreen = options.NoScreen;
             Sticky = options.Sticky;
             TimeOut = options.TimeOut ?? TimeOut;
+
+            _jsObject = jsObject;
+        }
+
+        /// <summary>
+        /// Dismiss the notification.
+        /// </summary>
+        /// <returns></returns>
+        public ValueTask Close()
+        {
+            return  _jsObject.InvokeVoidAsync("close");
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            await _jsObject.DisposeAsync();
         }
     }
 }
